@@ -1,0 +1,39 @@
+sequences = {
+    "Sequence_1": "ATGCGTACGTAGCTAGCTAG",
+    "Sequence_2": "GGGCCCAAATTTGGGCCCAA",
+    "Sequence_3": "ATATNNGCGCATATGC",
+    "Sequence_4": "ATGCGCGATATAGCGCTA",
+    "Sequence_5": "GGGATCCCGTTAACGG"
+}
+
+print("BASIC DNA SEQUENCE ANALYSIS")
+print("---------------------------")
+
+total_length = 0
+
+for name, seq in sequences.items():
+
+    length = len(seq)
+    total_length += length
+
+    A = seq.count("A")
+    T = seq.count("T")
+    G = seq.count("G")
+    C = seq.count("C")
+    N = seq.count("N")
+
+    gc = ((G + C) / length) * 100
+
+    print("\nSequence:", name)
+    print("Length:", length)
+    print("A:", A)
+    print("T:", T)
+    print("G:", G)
+    print("C:", C)
+    print("Unknown bases:", N)
+    print("GC Content:", round(gc, 2), "%")
+
+average = total_length / len(sequences)
+
+print("\nTotal Sequences:", len(sequences))
+print("Average Length:", average)
